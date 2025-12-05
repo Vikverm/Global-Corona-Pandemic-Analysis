@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Tailwind Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between p-5 bg-white shadow">
+    <h1 class="text-2xl font-bold">BrandName</h1>
+    <ul class="hidden md:flex gap-6">
+      <li><a href="#" class="hover:text-blue-600">Home</a></li>
+      <li><a href="#" class="hover:text-blue-600">Services</a></li>
+      <li><a href="#" class="hover:text-blue-600">Contact</a></li>
+    </ul>
+    <button id="menuBtn" class="md:hidden">☰</button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="text-center py-20">
+    <img src="assets/images/city.jpg" class="mx-auto mb-6 rounded-lg shadow">
+    <h2 class="text-4xl font-bold">Build Modern Websites</h2>
+    <p class="mt-4 text-gray-600">Fast. Responsive. Professional.</p>
+    <button class="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Get Started</button>
+  </section>
+
+  <!-- Services -->
+  <section class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 p-10">
+    <div class="p-6 bg-white shadow rounded-xl text-center">
+      <h3 class="text-xl font-semibold mb-2">Service One</h3>
+      <p>High-quality web solutions for your business.</p>
+    </div>
+    <div class="p-6 bg-white shadow rounded-xl text-center">
+      <h3 class="text-xl font-semibold mb-2">Service Two</h3>
+      <p>Clean UI/UX designs tailored to your needs.</p>
+    </div>
+    <div class="p-6 bg-white shadow rounded-xl text-center">
+      <h3 class="text-xl font-semibold mb-2">Service Three</h3>
+      <p>Fast and secure website development.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="max-w-lg mx-auto bg-white shadow p-10 rounded-xl mb-10">
+    <h2 class="text-2xl font-bold mb-5">Contact Us</h2>
+    <form class="space-y-4">
+      <input class="w-full p-3 border rounded" placeholder="Your Name" />
+      <input class="w-full p-3 border rounded" placeholder="Your Email" />
+      <textarea class="w-full p-3 border rounded" placeholder="Your Message"></textarea>
+      <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">Submit</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-5 bg-gray-900 text-white">
+  <p class="mb-4">© 2025 My Website. All rights reserved.</p>
+
+  <div class="flex justify-center gap-6">
+    <a href="#">
+      <img src="assets/icons/facebook.png" class="w-6 h-6 invert" alt="Facebook">
+    </a>
+    <a href="#">
+      <img src="assets/icons/twitter.png" class="w-6 h-6 invert" alt="Twitter">
+    </a>
+    <a href="#">
+      <img src="assets/icons/linkedin.png" class="w-6 h-6 invert" alt="LinkedIn">
+    </a>
+  </div>
+</footer>
+
+
+<script src="js/script.js"></script>
+</body>
+</html>
