@@ -2,28 +2,28 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# -----------------------------
+# ---------------------------------------------------
 # Page Configuration
-# -----------------------------
+# ---------------------------------------------------
 st.set_page_config(
     page_title="Global Corona Pandemic Analysis",
     page_icon="🌍",
     layout="wide"
 )
 
-# -----------------------------
+# ---------------------------------------------------
 # Title
-# -----------------------------
+# ---------------------------------------------------
 st.title("🌍 Global Corona Pandemic Analysis Dashboard")
-st.markdown(
-    "Analyze **COVID-19 Vaccination Data** using interactive charts and maps."
+st.write(
+    "Analyze worldwide COVID-19 vaccination data using interactive charts and maps."
 )
 
 st.divider()
 
-# -----------------------------
+# ---------------------------------------------------
 # Load Dataset
-# -----------------------------
+# ---------------------------------------------------
 @st.cache_data
 def load_data():
     df = pd.read_csv("covid-vaccination-doses-per-capita.csv")
@@ -31,9 +31,9 @@ def load_data():
 
     latest = (
         df.sort_values("date")
-          .groupby("location")
-          .last()
-          .reset_index()
+        .groupby("location")
+        .last()
+        .reset_index()
     )
 
     return df, latest
@@ -41,24 +41,31 @@ def load_data():
 
 df, latest = load_data()
 
-# -----------------------------
+# ---------------------------------------------------
 # Sidebar
-# -----------------------------
-st.sidebar.header("🔍 Filters")
+# ---------------------------------------------------
+st.sidebar.title("Dashboard Filters")
 
-country = st.sidebar.selectbox(
+countries = ["All Countries"] + sorted(latest["location"].unique())
+
+selected_country = st.sidebar.selectbox(
     "Select Country",
-    ["All Countries"] + sorted(latest["location"].tolist())
+    countries
 )
 
-if country != "All Countries":
-    filtered = latest[latest["location"] == country]
+# ---------------------------------------------------
+# Filter
+# ---------------------------------------------------
+if selected_country == "All Countries":
+    filtered = latest
 else:
-    filtered = latest.copy()
+    filtered = latest[
+        latest["location"] == selected_country
+    ]
 
-# -----------------------------
+# ---------------------------------------------------
 # KPI Cards
-# -----------------------------
+# ---------------------------------------------------
 total_countries = latest["location"].nunique()
 total_records = len(df)
 
@@ -67,39 +74,45 @@ highest_country = latest.loc[
     "location"
 ]
 
-highest_value = latest["total_vaccinations_per_hundred"].max()
+highest_value = latest[
+    "total_vaccinations_per_hundred"
+].max()
 
-average = latest["total_vaccinations_per_hundred"].mean()
+average = latest[
+    "total_vaccinations_per_hundred"
+].mean()
 
 col1, col2, col3, col4 = st.columns(4)
 
 col1.metric(
-    "🌍 Countries",
+    "Countries",
     total_countries
 )
 
 col2.metric(
-    "📊 Dataset Records",
+    "Records",
     total_records
 )
 
 col3.metric(
-    "🏆 Highest Vaccination",
+    "Highest Vaccination",
     f"{highest_value:.2f}"
 )
 
 col4.metric(
-    "📈 Average",
+    "Average",
     f"{average:.2f}"
 )
 
-st.info(f"Highest Vaccination Coverage: **{highest_country}**")
+st.info(
+    f"Highest vaccination coverage: **{highest_country}**"
+)
 
 st.divider()
 
-# -----------------------------
+# ---------------------------------------------------
 # Top 10 Countries
-# -----------------------------
+# ---------------------------------------------------
 st.subheader("🏆 Top 10 Vaccinated Countries")
 
 top10 = latest.sort_values(
@@ -111,15 +124,16 @@ fig = px.bar(
     top10,
     x="location",
     y="total_vaccinations_per_hundred",
-    text_auto=".2f",
-    title="Top 10 Countries"
+    text="total_vaccinations_per_hundred",
+    color="total_vaccinations_per_hundred",
+    title="Top 10 Countries by Vaccination"
 )
 
 st.plotly_chart(fig, use_container_width=True)
 
-# -----------------------------
-# Histogram
-# -----------------------------
+# ---------------------------------------------------
+# Distribution
+# ---------------------------------------------------
 st.subheader("📈 Vaccination Distribution")
 
 hist = px.histogram(
@@ -131,9 +145,9 @@ hist = px.histogram(
 
 st.plotly_chart(hist, use_container_width=True)
 
-# -----------------------------
+# ---------------------------------------------------
 # World Map
-# -----------------------------
+# ---------------------------------------------------
 st.subheader("🌍 Global Vaccination Map")
 
 map_fig = px.choropleth(
@@ -141,40 +155,33 @@ map_fig = px.choropleth(
     locations="iso_code",
     color="total_vaccinations_per_hundred",
     hover_name="location",
-    color_continuous_scale="Viridis",
-    title="Vaccination Coverage Across the World"
+    color_continuous_scale="Viridis"
 )
 
 st.plotly_chart(map_fig, use_container_width=True)
 
-# -----------------------------
+# ---------------------------------------------------
 # Dataset Preview
-# -----------------------------
+# ---------------------------------------------------
 st.subheader("📋 Dataset Preview")
 
-st.dataframe(filtered)
+st.dataframe(
+    filtered,
+    use_container_width=True
+)
 
-# -----------------------------
-# Download Button
-# -----------------------------
+# ---------------------------------------------------
+# Download CSV
+# ---------------------------------------------------
 csv = filtered.to_csv(index=False)
 
 st.download_button(
-    "📥 Download Filtered Data",
-    csv,
-    "filtered_data.csv",
-    "text/csv"
+    label="📥 Download Filtered Data",
+    data=csv,
+    file_name="filtered_data.csv",
+    mime="text/csv"
 )
 
-# -----------------------------
-# Footer
-# -----------------------------
 st.divider()
 
-st.markdown(
-"""
-### 👨‍💻 Developed by Vikas Verma
-
-Python • Pandas • Plotly • Streamlit
-"""
-)
+st.caption("Developed by Vikas Verma | Python • Pandas • Plotly • Streamlit")
