@@ -1,38 +1,48 @@
-# 🌍 Global Corona Pandemic Analysis
+# 🌍 Global Corona Pandemic Analysis Dashboard
 
-A Python-based data analysis project that explores global COVID-19 vaccination trends using data visualization and statistical analysis techniques. The project uses the **Our World in Data** vaccination dataset to generate meaningful insights through charts and an interactive world map.
+An interactive **COVID-19 Vaccination Analysis Dashboard** built using **Python**, **Streamlit**, **Pandas**, and **Plotly**. This project analyzes global COVID-19 vaccination data, provides interactive visualizations, and helps users explore vaccination trends across different countries.
+
+---
+
+## 🚀 Live Demo
+
+> **Coming Soon** (Deploy on Streamlit Community Cloud)
 
 ---
 
 ## 📌 Project Overview
 
-This project analyzes worldwide COVID-19 vaccination data to understand vaccination progress across different countries. It demonstrates data cleaning, statistical analysis, and visualization using Python libraries.
+This dashboard analyzes worldwide COVID-19 vaccination data from the **Our World in Data** dataset and presents meaningful insights through interactive charts, maps, and statistical summaries.
 
-### Key Objectives
+Users can:
 
-* Analyze global COVID-19 vaccination data
-* Clean and preprocess the dataset
-* Compare vaccination coverage across countries
-* Generate statistical insights
-* Visualize data using charts and interactive maps
+* Explore vaccination progress by country
+* Compare vaccination coverage
+* Visualize global vaccination trends
+* Download filtered data
+* Analyze key vaccination statistics
 
 ---
 
-## 🚀 Features
+## ✨ Features
 
-### 📊 Data Analysis
+### 📊 Dashboard Analytics
 
-* COVID-19 vaccination dataset analysis
-* Data cleaning and preprocessing
-* Statistical summary of vaccination data
-* Country-wise vaccination comparison
-* Top 10 vaccinated countries analysis
+* KPI Cards (Countries, Records, Highest & Average Vaccination)
+* Interactive Country Filter
+* Date Range Filter
+* Top 10 Vaccinated Countries
+* Vaccination Trend Analysis
+* Vaccination Distribution Histogram
+* Box Plot Analysis
+* Scatter Plot Analysis
+* Country Statistics Table
 
-### 📈 Data Visualization
+### 🌍 Interactive Visualizations
 
-* Vaccination distribution histogram
-* Interactive world vaccination map using Plotly
-* Statistical insights and interpretation
+* Global Vaccination Coverage Map
+* Interactive Plotly Charts
+* Download Filtered Dataset
 
 ---
 
@@ -42,17 +52,20 @@ This project analyzes worldwide COVID-19 vaccination data to understand vaccinat
 
 * Python
 
+### Framework
+
+* Streamlit
+
 ### Libraries
 
 * Pandas
+* Plotly
 * Matplotlib
 * Seaborn
-* Plotly
 
-### Development Environment
+### Dataset
 
-* Google Colab
-* Jupyter Notebook
+* Our World in Data – COVID-19 Vaccination Dataset
 
 ---
 
@@ -60,68 +73,72 @@ This project analyzes worldwide COVID-19 vaccination data to understand vaccinat
 
 ```text
 Global-Corona-Pandemic-Analysis/
-│── Global_Corona_Pandemic_Analysis.ipynb
+│── app.py
+│── requirements.txt
 │── README.md
+│── covid-vaccination-doses-per-capita.csv
 ```
 
 ---
 
-## 📊 Analysis Workflow
+## 📊 Dashboard Preview
 
-### 1. Data Collection
+### Main Features
 
-* Load the COVID-19 vaccination dataset.
+* 🌍 Global Vaccination Dashboard
+* 📈 Vaccination Trend Analysis
+* 🏆 Top 10 Vaccinated Countries
+* 🌎 Interactive World Map
+* 📊 Histogram
+* 📦 Box Plot
+* 🔵 Scatter Plot
+* 📋 Country Statistics
+* 📥 Download Filtered Data
 
-### 2. Data Cleaning
+> Add screenshots inside a `screenshots/` folder after deployment.
 
-* Handle missing values.
-* Prepare the dataset for analysis.
+Example:
 
-### 3. Country-wise Analysis
+```text
+screenshots/
+│── dashboard.png
+│── world-map.png
+│── charts.png
+```
 
-* Compare vaccination rates among countries.
+Then include them in the README:
 
-### 4. Top Vaccinated Countries
+```markdown
+## Screenshots
 
-* Identify the countries with the highest vaccination coverage.
+![Dashboard](screenshots/dashboard.png)
 
-### 5. Statistical Analysis
+![World Map](screenshots/world-map.png)
 
-* Mean
-* Median
-* Minimum & Maximum
-* Distribution analysis
-
-### 6. Visualization
-
-* Vaccination distribution histogram
-* Interactive global vaccination map (Plotly)
+![Charts](screenshots/charts.png)
+```
 
 ---
 
 ## ⚙️ Installation
 
-### Clone the repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/Vikverm/Global-Corona-Pandemic-Analysis.git
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
-pip install pandas matplotlib seaborn plotly
+pip install -r requirements.txt
 ```
 
-### Run the notebook
+### Run the Dashboard
 
-Open:
-
-```text
-Global_Corona_Pandemic_Analysis.ipynb
+```bash
+streamlit run app.py
 ```
-
-Run all notebook cells in Google Colab or Jupyter Notebook.
 
 ---
 
@@ -129,16 +146,17 @@ Run all notebook cells in Google Colab or Jupyter Notebook.
 
 **COVID-19 Vaccination Dataset**
 
-Source: Our World in Data
+Source: **Our World in Data**
 
 ---
 
 ## 🔮 Future Improvements
 
-* Add real-time COVID-19 data integration
-* Build an interactive dashboard using Streamlit
-* Perform predictive analysis on vaccination trends
-* Include additional pandemic-related datasets
+* Real-time COVID-19 API Integration
+* Predictive Analytics using Machine Learning
+* Additional Vaccination Insights
+* Dashboard Theme Customization
+* Export Charts as Images
 
 ---
 
@@ -146,7 +164,7 @@ Source: Our World in Data
 
 **Vikas Verma**
 
-GitHub: https://github.com/Vikverm
+* GitHub: https://github.com/Vikverm
 
 ---
 
