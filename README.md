@@ -1,26 +1,21 @@
 # 🌍 Global Corona Pandemic Analysis Dashboard
 
-An interactive **COVID-19 Vaccination Analysis Dashboard** built using **Python**, **Streamlit**, **Pandas**, and **Plotly**. This project analyzes global COVID-19 vaccination data, provides interactive visualizations, and helps users explore vaccination trends across different countries.
+An interactive **COVID-19 Vaccination Analysis Dashboard** built with **Python**, **Streamlit**, **Pandas**, and **Plotly**. This project analyzes global COVID-19 vaccination data and presents meaningful insights through interactive charts, maps, and statistical visualizations.
 
 ---
 
 ## 🚀 Live Demo
 
-> **Coming Soon** (Deploy on Streamlit Community Cloud)
+🌐 **Streamlit Dashboard:**
+https://global-corona-pandemic-analysis-11.streamlit.app/
 
 ---
 
 ## 📌 Project Overview
 
-This dashboard analyzes worldwide COVID-19 vaccination data from the **Our World in Data** dataset and presents meaningful insights through interactive charts, maps, and statistical summaries.
+The **Global Corona Pandemic Analysis Dashboard** provides an interactive platform to explore worldwide COVID-19 vaccination progress using the **Our World in Data** vaccination dataset.
 
-Users can:
-
-* Explore vaccination progress by country
-* Compare vaccination coverage
-* Visualize global vaccination trends
-* Download filtered data
-* Analyze key vaccination statistics
+Users can analyze vaccination trends, compare countries, explore interactive visualizations, and gain insights into global vaccination coverage.
 
 ---
 
@@ -28,21 +23,23 @@ Users can:
 
 ### 📊 Dashboard Analytics
 
-* KPI Cards (Countries, Records, Highest & Average Vaccination)
-* Interactive Country Filter
-* Date Range Filter
-* Top 10 Vaccinated Countries
-* Vaccination Trend Analysis
-* Vaccination Distribution Histogram
-* Box Plot Analysis
-* Scatter Plot Analysis
-* Country Statistics Table
+* 📈 Interactive KPI Cards
+* 🌍 Country Filter
+* 📅 Date Range Filter
+* 🏆 Top 10 Vaccinated Countries
+* 📉 Vaccination Distribution Histogram
+* 📈 Vaccination Trend Analysis
+* 📦 Box Plot Analysis
+* 🔵 Scatter Plot Visualization
+* 📋 Country Statistics Table
+* 📥 Download Filtered Dataset
 
-### 🌍 Interactive Visualizations
+### 🌎 Interactive Visualizations
 
-* Global Vaccination Coverage Map
-* Interactive Plotly Charts
-* Download Filtered Dataset
+* Interactive World Vaccination Map
+* Dynamic Plotly Charts
+* Real-time Data Filtering
+* Responsive Dashboard Layout
 
 ---
 
@@ -56,7 +53,7 @@ Users can:
 
 * Streamlit
 
-### Libraries
+### Data Analysis Libraries
 
 * Pandas
 * Plotly
@@ -81,42 +78,17 @@ Global-Corona-Pandemic-Analysis/
 
 ---
 
-## 📊 Dashboard Preview
+## 📊 Dashboard Highlights
 
-### Main Features
-
-* 🌍 Global Vaccination Dashboard
-* 📈 Vaccination Trend Analysis
+* 🌍 Interactive Global Vaccination Map
+* 📊 KPI Dashboard
+* 📈 Vaccination Trend Over Time
 * 🏆 Top 10 Vaccinated Countries
-* 🌎 Interactive World Map
-* 📊 Histogram
+* 📉 Vaccination Distribution Analysis
 * 📦 Box Plot
 * 🔵 Scatter Plot
 * 📋 Country Statistics
-* 📥 Download Filtered Data
-
-> Add screenshots inside a `screenshots/` folder after deployment.
-
-Example:
-
-```text
-screenshots/
-│── dashboard.png
-│── world-map.png
-│── charts.png
-```
-
-Then include them in the README:
-
-```markdown
-## Screenshots
-
-![Dashboard](screenshots/dashboard.png)
-
-![World Map](screenshots/world-map.png)
-
-![Charts](screenshots/charts.png)
-```
+* 📥 Download Filtered Dataset
 
 ---
 
@@ -126,6 +98,12 @@ Then include them in the README:
 
 ```bash
 git clone https://github.com/Vikverm/Global-Corona-Pandemic-Analysis.git
+```
+
+### Navigate to the Project
+
+```bash
+cd Global-Corona-Pandemic-Analysis
 ```
 
 ### Install Dependencies
@@ -144,18 +122,47 @@ streamlit run app.py
 
 ## 📂 Dataset
 
-**COVID-19 Vaccination Dataset**
+**Dataset:** COVID-19 Vaccination Dataset
 
-Source: **Our World in Data**
+**Source:** Our World in Data
 
 ---
 
-## 🔮 Future Improvements
+## 📈 Key Insights
 
-* Real-time COVID-19 API Integration
+The dashboard enables users to:
+
+* Compare vaccination coverage across countries
+* Analyze vaccination trends over time
+* Identify the highest vaccinated countries
+* Explore global vaccination coverage using an interactive world map
+* Download filtered data for further analysis
+* Perform statistical analysis through interactive visualizations
+
+---
+
+## 🎯 Learning Outcomes
+
+This project demonstrates practical experience with:
+
+* Python Programming
+* Data Cleaning & Preprocessing
+* Exploratory Data Analysis (EDA)
+* Interactive Dashboard Development
+* Data Visualization with Plotly
+* Streamlit Web Application Development
+* Git & GitHub
+* Deployment using Streamlit Community Cloud
+
+---
+
+## 🚀 Future Enhancements
+
+* Live COVID-19 API Integration
 * Predictive Analytics using Machine Learning
-* Additional Vaccination Insights
-* Dashboard Theme Customization
+* Advanced Country Comparison Dashboard
+* Custom Dashboard Themes
+* Additional Statistical Reports
 * Export Charts as Images
 
 ---
